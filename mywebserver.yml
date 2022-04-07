@@ -12,6 +12,7 @@
      service:
         name: apache2
         state: started      
+     when: ansible_os_family== "Debian"
 
    - name: install webserver into RadHat nodes
      yum:
@@ -23,4 +24,6 @@
      service:
          name: httpd
          states: started
-         
+     when: ansible_os_family== "RadHat"
+          
+
