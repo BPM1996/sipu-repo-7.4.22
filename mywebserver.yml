@@ -14,7 +14,7 @@
         state: started      
      when: ansible_os_family== "Debian"
 
-   - name: install webserver into RadHat nodes
+   - name: install webserver into RedHat nodes
      yum:
        name: httpd
        state: present
