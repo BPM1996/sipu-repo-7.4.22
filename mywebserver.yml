@@ -2,12 +2,23 @@
 - hosts: all
   become: yes
   tasks: 
-   - name: install webserver
+   - name: install webserver into ubuntu nodes
      apt:
        name: apache2
        state: present
         
-   - name: restart webserver
+   - name: restart webserver into ubuntu nodes
      service:
         name: apache2
         state: started      
+
+   - name: install webserver into RadHat nodes
+     yum:
+       name: httpd
+       state: present
+
+   - name: restart webserver into RedHat nodes
+     service:
+         name: httpd
+         states: started
+         
