@@ -23,7 +23,8 @@
    - name: restart webserver into RedHat nodes
      service:
          name: httpd
-         states: started
+         state: started
      when: ansible_os_family== "RedHat"
+     
 
 
