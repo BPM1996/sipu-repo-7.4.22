@@ -6,7 +6,8 @@
      apt:
        name: apache2
        state: present
-        
+     when: ansible_os_family== "Debian"
+
    - name: restart webserver into ubuntu nodes
      service:
         name: apache2
@@ -16,6 +17,7 @@
      yum:
        name: httpd
        state: present
+     when: ansible_os_family== "RedHat"
 
    - name: restart webserver into RedHat nodes
      service:
