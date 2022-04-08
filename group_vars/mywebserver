@@ -1,0 +1,5 @@
+---
+mywebpackageforubuntu: apache2
+mywebpackageforRedHat: httpd
+myjavapackgeforubuntu: openjdk-8-jre 
+myjavapackgeforRedHat: java-1.8.0-openjdk

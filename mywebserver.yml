@@ -4,27 +4,53 @@
   tasks: 
    - name: install webserver into ubuntu nodes
      apt:
-       name: apache2
+       name: "{{mywebpackageforubuntu}}"
        state: present
      when: ansible_os_family== "Debian"
 
    - name: restart webserver into ubuntu nodes
      service:
-        name: apache2
+        name: "{{mywebpackageforubuntu}}"
         state: started      
      when: ansible_os_family== "Debian"
 
    - name: install webserver into RedHat nodes
      yum:
-       name: httpd
+       name: "{{mywebpackageforRedHat}}"
        state: present
      when: ansible_os_family== "RedHat"
 
    - name: restart webserver into RedHat nodes
      service:
-         name: httpd
+         name: "{{mywebpackageforRedHat}}"
          state: started
      when: ansible_os_family== "RedHat"
+
+   - name: install java into ubuntu nodes
+     apt:
+       name: "{{myjavapackgeforubuntu}}"
+       state: present
+     when: ansible_os_family== "Debian"
+
+   - name: start java into ubuntu nodes
+     service:
+        name: "{{myjavapackgeforubuntu}}"
+        state: started
+     when: ansible_os_family== "Debian"
+
+   - name: install java into RedHat nodes
+     yum:
+       name: "{{myjavapackgeforRedHat}}"
+       state: present
+     when: ansible_os_family== "RedHat"
+
+   - name: start java into RedHat nodes
+     service:
+       name: "{{myjavapackgeforRedHat}}"
+       state: started 
+     when: ansible_os_family== "RedHat"  
      
+
+
 
 
