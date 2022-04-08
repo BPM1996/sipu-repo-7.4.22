@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: mywebserver
   become: yes
   tasks: 
    - name: install webserver into ubuntu nodes
@@ -49,7 +49,7 @@
        name: "{{myjavapackgeforRedHat}}"
        state: started 
      when: ansible_os_family== "RedHat"  
-     
+
 
 
 
