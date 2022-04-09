@@ -10,6 +10,6 @@
 
   - name: i want to copy into ansible nodes
     template:
-         src: indexfile
+         src: myindex.j2
          dest: /var/www/html/inex.html     
 
