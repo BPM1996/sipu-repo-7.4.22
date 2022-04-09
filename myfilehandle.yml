@@ -8,3 +8,8 @@
        name: apache2
        state: present   
 
+  - name: i want to copy into ansible nodes
+    template:
+         src: indexfile
+         dest: /var/www/html/inex.html     
+
