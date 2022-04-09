@@ -7,9 +7,18 @@
     apt:
        name: apache2
        state: present   
+    notify: restartwebserver
 
   - name: i want to copy into ansible nodes
     template:
          src: myindex.j2
          dest: /var/www/html/inex.html     
+    notify: restartwebserver
+    
+  handler:
+  - name: restartwebserver
+    service:
+        name: apache2
+        state: restarted
+
 
