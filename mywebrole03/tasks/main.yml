@@ -1,2 +1,13 @@
 ---
 # tasks file for mywebrole03
+- name: install wget
+  apt:
+    name: wget
+    state: present
+  tags: mywget
+  
+- name: install git
+  apt: 
+    name: git    
+    state: present
+  tags: mygit  
